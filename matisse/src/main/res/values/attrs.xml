@@ -27,10 +27,22 @@
     <attr name="bottomToolbar.bg" format="reference|color"/>
     <attr name="bottomToolbar.preview.textColor" format="reference|color"/>
     <attr name="bottomToolbar.apply.textColor" format="reference|color"/>
+    <attr name="bottomToolbar.apply.textBackground" format="reference"/>
     <attr name="preview.bottomToolbar.back.textColor" format="reference|color"/>
     <attr name="preview.bottomToolbar.apply.textColor" format="reference|color"/>
     <attr name="item.placeholder" format="reference|color"/>
     <attr name="item.checkCircle.backgroundColor" format="reference|color"/>
+    <attr name="item.uncheckCircle.backgroundColor" format="reference|color"/>
     <attr name="item.checkCircle.borderColor" format="reference|color"/>
     <attr name="capture.textColor" format="reference|color"/>
+
+    <declare-styleable name="CheckView">
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="borderColor" format="color"/>
+        <attr name="uncheckCircleColor" format="color"/>
+        <attr name="checkCircleColor" format="color"/>
+        <attr name="checkTextColor" format="color"/>
+        <attr name="checkTextSize" format="dimension"/>
+        <attr name="circleRadius" format="dimension"/>
+    </declare-styleable>
 </resources>

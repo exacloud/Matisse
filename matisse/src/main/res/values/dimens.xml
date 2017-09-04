@@ -19,4 +19,11 @@
     <dimen name="media_grid_spacing">4dp</dimen>
 
     <dimen name="album_item_height">72dp</dimen>
+
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_yezi">12dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_micro">4dp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="divider">0.5dp</dimen>
 </resources>

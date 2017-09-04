@@ -37,22 +37,17 @@ import com.zhihu.matisse.internal.utils.Platform;
 
 public abstract class BasePreviewActivity extends AppCompatActivity implements View.OnClickListener,
         ViewPager.OnPageChangeListener {
-
     public static final String EXTRA_DEFAULT_BUNDLE = "extra_default_bundle";
     public static final String EXTRA_RESULT_BUNDLE = "extra_result_bundle";
     public static final String EXTRA_RESULT_APPLY = "extra_result_apply";
-
     protected final SelectedItemCollection mSelectedCollection = new SelectedItemCollection(this);
     protected SelectionSpec mSpec;
     protected ViewPager mPager;
-
     protected PreviewPagerAdapter mAdapter;
-
     protected CheckView mCheckView;
-    protected TextView mButtonBack;
+    protected View mButtonBack;
     protected TextView mButtonApply;
     protected TextView mSize;
-
     protected int mPreviousPos = -1;
 
     @Override
@@ -75,7 +70,7 @@ public abstract class BasePreviewActivity extends AppCompatActivity implements V
             mSelectedCollection.onCreate(savedInstanceState);
         }
 
-        mButtonBack = (TextView) findViewById(R.id.button_back);
+        mButtonBack = findViewById(R.id.button_back);
         mButtonApply = (TextView) findViewById(R.id.button_apply);
         mSize = (TextView) findViewById(R.id.size);
         mButtonBack.setOnClickListener(this);
@@ -89,7 +84,6 @@ public abstract class BasePreviewActivity extends AppCompatActivity implements V
         mCheckView.setCountable(mSpec.countable);
 
         mCheckView.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 Item item = mAdapter.getMediaItem(mPager.getCurrentItem());
@@ -179,16 +173,9 @@ public abstract class BasePreviewActivity extends AppCompatActivity implements V
 
     private void updateApplyButton() {
         int selectedCount = mSelectedCollection.count();
-        if (selectedCount == 0) {
-            mButtonApply.setText(R.string.button_apply_default);
-            mButtonApply.setEnabled(false);
-        } else if (selectedCount == 1 && mSpec.singleSelectionModeEnabled()) {
-            mButtonApply.setText(R.string.button_apply_default);
-            mButtonApply.setEnabled(true);
-        } else {
-            mButtonApply.setEnabled(true);
-            mButtonApply.setText(getString(R.string.button_apply, selectedCount));
-        }
+        mButtonApply.setText(getString(R.string.button_apply, selectedCount, SelectionSpec
+                .getInstance().maxSelectable));
+        mButtonApply.setOnClickListener(this);
     }
 
     protected void updateSize(Item item) {

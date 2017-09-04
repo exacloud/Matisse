@@ -29,7 +29,6 @@ import java.util.List;
 import java.util.Set;
 
 public final class SelectionSpec {
-
     public Set<MimeType> mimeTypeSet;
     public boolean mediaTypeExclusive;
     public boolean showSingleMediaType;

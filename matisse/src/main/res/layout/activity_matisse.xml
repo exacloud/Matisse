@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2017 Zhihu Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
   -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/root"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
+<RelativeLayout android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -28,65 +26,64 @@
         android:background="?colorPrimary"
         android:elevation="4dp"
         android:theme="?toolbar"
-        tools:targetApi="lollipop">
-
+        tools:targetApi="lollipop" />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:layout_above="@+id/bottom_toolbar"
+        android:background="@color/divider" />
+    <RelativeLayout
+        android:id="@+id/bottom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/bottomToolbar.bg"
+        android:gravity="center_vertical">
         <TextView
             android:id="@+id/selected_album"
             android:layout_width="wrap_content"
-            android:layout_height="?actionBarSize"
-            android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"
-            android:foreground="?selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
             android:gravity="center"
             android:textColor="?attr/album.element.color"
-            android:textSize="20sp"/>
-    </android.support.v7.widget.Toolbar>
-
-    <FrameLayout
-        android:id="@+id/bottom_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="?attr/bottomToolbar.bg"
-        android:elevation="4dp"
-        tools:targetApi="lollipop">
-
-        <TextView
-            android:id="@+id/button_preview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:foreground="?selectableItemBackground"
-            android:padding="16dp"
-            android:text="@string/button_preview"
-            android:textColor="?attr/bottomToolbar.preview.textColor"
-            android:textSize="16sp"/>
-
+            android:textSize="15sp"
+            tools:text="所有相册" />
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignBottom="@+id/selected_album"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/selected_album"
+            android:src="@drawable/ic_drop_down" />
         <TextView
             android:id="@+id/button_apply"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:foreground="?selectableItemBackground"
-            android:padding="16dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_yezi"
+            android:background="?bottomToolbar.apply.textBackground"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingRight="@dimen/margin_small"
             android:textColor="?attr/bottomToolbar.apply.textColor"
-            android:textSize="16sp"/>
-    </FrameLayout>
-
+            android:textSize="14sp"
+            tools:text="完成（1/9）" />
+    </RelativeLayout>
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_toolbar"
+        android:layout_above="@id/divider"
         android:layout_below="@id/toolbar"
-        android:visibility="gone"/>
-
+        android:visibility="gone" />
     <FrameLayout
         android:id="@+id/empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_toolbar"
+        android:layout_above="@id/divider"
         android:layout_below="@id/toolbar"
         android:visibility="gone">
-
         <TextView
             android:id="@+id/empty_view_content"
             android:layout_width="wrap_content"
@@ -97,7 +94,13 @@
             android:gravity="center"
             android:text="@string/empty_text"
             android:textColor="?attr/album.emptyView.textColor"
-            android:textSize="16sp"/>
-
+            android:textSize="16sp" />
     </FrameLayout>
+    <ViewStub
+        android:id="@+id/album_list_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/divider"
+        android:layout_below="@+id/toolbar"
+        android:layout="@layout/album_list_stub" />
 </RelativeLayout>

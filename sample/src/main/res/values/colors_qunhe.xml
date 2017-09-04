@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="qunhe_primary">#FFFFFF</color>
+    <color name="qunhe_primary_dark">#FFFFFF</color>
+    <color name="qunhe_album_select_text">#404A5C </color>
+    <color name="qunhe_album_popup_bg">#FFFFFF</color>
+    <color name="qunhe_album_dropdown_title_text">#333333</color>
+    <color name="qunhe_album_dropdown_count_text">#333333</color>
+    <color name="qunhe_album_dropdown_thumbnail_placeholder">#EAEEF4</color>
+    <color name="qunhe_album_empty_view">#4D000000</color>
+    <color name="qunhe_item_placeholder">#EAEEF4</color>
+    <color name="qunhe_item_checkCircle_backgroundColor">#1E8AE8</color>
+    <color name="qunhe_item_uncheckCircle_backgroundColor">#99000000</color>
+    <color name="qunhe_item_checkCircle_borderColor">#FFFFFF</color>
+    <color name="qunhe_capture">#424242</color>
+    <color name="qunhe_page_bg">#FFFFFF</color>
+    <color name="qunhe_bottom_toolbar_bg">#FFFFFF</color>
+    <color name="qunhe_bottom_toolbar_preview_text">#DE000000</color>
+    <color name="qunhe_bottom_toolbar_preview_text_disable">#4D000000</color>
+    <color name="qunhe_bottom_toolbar_apply_text">#FFFFFF</color>
+    <color name="qunhe_preview_bottom_toolbar_back_text">#FFFFFF</color>
+    <color name="qunhe_preview_bottom_toolbar_apply_text">#FFFFFF</color>
+    <color name="qunhe_preview_bottom_toolbar_apply_text_disable">#FFFFFF</color>
+    <color name="qunhe_text_primary">#5A98FF</color>
+
+    <color name="qunhe_bottom_toolbar_apply_text_background">#5A98FF</color>
+
+    <color name="qunhe_toolbar_text">#404A5C</color>
+</resources>

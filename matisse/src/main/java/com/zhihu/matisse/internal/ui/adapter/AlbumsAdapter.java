@@ -20,6 +20,7 @@ import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +35,8 @@ import com.zhihu.matisse.internal.entity.SelectionSpec;
 import java.io.File;
 
 public class AlbumsAdapter extends CursorAdapter {
-
     private final Drawable mPlaceholder;
+    private int mSelectedPosition = 0;
 
     public AlbumsAdapter(Context context, Cursor c, boolean autoRequery) {
         super(context, c, autoRequery);
@@ -62,13 +63,41 @@ public class AlbumsAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
+        final int position = cursor.getPosition();
+
         Album album = Album.valueOf(cursor);
         ((TextView) view.findViewById(R.id.album_name)).setText(album.getDisplayName(context));
-        ((TextView) view.findViewById(R.id.album_media_count)).setText(String.valueOf(album.getCount()));
+        ((TextView) view.findViewById(R.id.album_media_count)).setText(String.valueOf(album
+                .getCount()));
+
+        Log.d("position", "cPos:" + position + " ,sPos" + mSelectedPosition + ",name:" + album
+                .getDisplayName(context));
+        view.findViewById(R.id.selector).setVisibility(position == mSelectedPosition ? View
+                .VISIBLE : View.INVISIBLE);
 
         // do not need to load animated Gif
-        SelectionSpec.getInstance().imageEngine.loadThumbnail(context, context.getResources().getDimensionPixelSize(R
-                        .dimen.media_grid_size), mPlaceholder,
-                (ImageView) view.findViewById(R.id.album_cover), Uri.fromFile(new File(album.getCoverPath())));
+        SelectionSpec.getInstance().imageEngine.loadThumbnail(context, context.getResources()
+                        .getDimensionPixelSize(R
+                                .dimen.media_grid_size), mPlaceholder,
+                (ImageView) view.findViewById(R.id.album_cover), Uri.fromFile(new File(album
+                        .getCoverPath())));
+    }
+
+    /**
+     * 设置选择的position
+     *
+     * @param position 当前选择的position
+     */
+    public void setSelectedPosition(int position) {
+        mSelectedPosition = position;
+    }
+
+    /**
+     * 获得选择的position
+     *
+     * @return 选择的position
+     */
+    public int getSelectedPosition() {
+        return mSelectedPosition;
     }
 }

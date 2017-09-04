@@ -54,6 +54,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_main);
         findViewById(R.id.zhihu).setOnClickListener(this);
         findViewById(R.id.dracula).setOnClickListener(this);
+        findViewById(R.id.qunhe).setOnClickListener(this);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -97,6 +98,15 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                             .countable(false)
                                             .maxSelectable(9)
                                             .imageEngine(new PicassoEngine())
+                                            .forResult(REQUEST_CODE_CHOOSE);
+                                    break;
+                                case R.id.qunhe:
+                                    Matisse.from(SampleActivity.this)
+                                            .choose(MimeType.ofImage())
+                                            .theme(R.style.Matisse_Qunhe)
+                                            .countable(true)
+                                            .maxSelectable(9)
+                                            .imageEngine(new GlideEngine())
                                             .forResult(REQUEST_CODE_CHOOSE);
                                     break;
                             }

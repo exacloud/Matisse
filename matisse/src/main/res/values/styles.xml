@@ -30,6 +30,7 @@
         <item name="album.emptyView.textColor">@color/zhihu_album_empty_view</item>
         <item name="item.placeholder">@color/zhihu_item_placeholder</item>
         <item name="item.checkCircle.backgroundColor">@color/zhihu_item_checkCircle_backgroundColor</item>
+        <item name="item.uncheckCircle.backgroundColor">@color/zhihu_item_uncheckCircle_backgroundColor</item>
         <item name="item.checkCircle.borderColor">@color/zhihu_item_checkCircle_borderColor</item>
         <item name="page.bg">@color/zhihu_page_bg</item>
         <item name="bottomToolbar.bg">@color/zhihu_bottom_toolbar_bg</item>
@@ -39,6 +40,7 @@
         <item name="preview.bottomToolbar.apply.textColor">@color/zhihu_preview_bottom_toolbar_apply</item>
         <item name="listPopupWindowStyle">@style/Popup.Zhihu</item>
         <item name="capture.textColor">@color/zhihu_capture</item>
+        <item name="bottomToolbar.apply.textBackground">@drawable/zhihu_bottom_toolbar_apply_text_background</item>
     </style>
 
     <style name="Toolbar.Zhihu" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -63,6 +65,7 @@
         <item name="album.emptyView.textColor">@color/dracula_album_empty_view</item>
         <item name="item.placeholder">@color/dracula_item_placeholder</item>
         <item name="item.checkCircle.backgroundColor">@color/dracula_item_checkCircle_backgroundColor</item>
+        <item name="item.uncheckCircle.backgroundColor">@color/dracula_item_uncheckCircle_backgroundColor</item>
         <item name="item.checkCircle.borderColor">@color/dracula_item_checkCircle_borderColor</item>
         <item name="page.bg">@color/dracula_page_bg</item>
         <item name="bottomToolbar.bg">@color/dracula_bottom_toolbar_bg</item>
@@ -73,6 +76,7 @@
         <item name="android:listPopupWindowStyle">@style/Popup.Dracula</item>
         <item name="listPopupWindowStyle">@style/Popup.Dracula</item>
         <item name="capture.textColor">@color/dracula_capture</item>
+        <item name="bottomToolbar.apply.textBackground">@drawable/dracula_bottom_toolbar_apply_text_background</item>
     </style>
 
     <style name="Toolbar.Dracula" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -82,5 +86,4 @@
     <style name="Popup.Dracula" parent="Widget.AppCompat.ListPopupWindow">
         <item name="android:popupBackground">@color/dracula_album_popup_bg</item>
     </style>
-
 </resources>
