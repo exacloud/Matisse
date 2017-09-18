@@ -25,6 +25,8 @@
         android:layout_height="match_parent"
         android:clipChildren="false"
         android:clipToPadding="false"
+        android:paddingLeft="@dimen/media_grid_spacing"
+        android:paddingRight="@dimen/media_grid_spacing"
         android:paddingBottom="@dimen/media_grid_spacing"
         android:paddingTop="@dimen/media_grid_spacing"/>
 

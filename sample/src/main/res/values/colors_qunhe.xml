@@ -22,6 +22,7 @@
     <color name="qunhe_preview_bottom_toolbar_apply_text">#FFFFFF</color>
     <color name="qunhe_preview_bottom_toolbar_apply_text_disable">#FFFFFF</color>
     <color name="qunhe_text_primary">#5A98FF</color>
+    <color name="qunhe_menu_text_color">#404A5C</color>
 
     <color name="qunhe_bottom_toolbar_apply_text_background">#5A98FF</color>
 

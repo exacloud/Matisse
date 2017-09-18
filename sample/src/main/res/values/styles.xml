@@ -62,7 +62,7 @@
         <item name="titleTextColor">@color/qunhe_toolbar_text</item>
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigation</item>
         <item name="homeAsUpIndicator">@drawable/toolbar_back_arrow</item>
-        <item name="actionMenuTextColor">@color/qunhe_text_primary</item>
+        <item name="actionMenuTextColor">@color/qunhe_menu_text_color</item>
         <item name="actionMenuTextAppearance">@style/MenuTextStyle</item>
     </style>
 

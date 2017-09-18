@@ -43,9 +43,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class SampleActivity extends AppCompatActivity implements View.OnClickListener {
-
     private static final int REQUEST_CODE_CHOOSE = 23;
-
     private UriAdapter mAdapter;
 
     @Override
@@ -81,12 +79,16 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                             .countable(true)
                                             .capture(true)
                                             .captureStrategy(
-                                                    new CaptureStrategy(true, "com.zhihu.matisse.sample.fileprovider"))
+                                                    new CaptureStrategy(true, "com.zhihu.matisse" +
+                                                            ".sample.fileprovider"))
                                             .maxSelectable(9)
-                                            .addFilter(new GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
+                                            .addFilter(new GifSizeFilter(320, 320, 5 * Filter.K *
+                                                    Filter.K))
                                             .gridExpectedSize(
-                                                    getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
-                                            .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+                                                    getResources().getDimensionPixelSize(R.dimen
+                                                            .grid_expected_size))
+                                            .restrictOrientation(ActivityInfo
+                                                    .SCREEN_ORIENTATION_PORTRAIT)
                                             .thumbnailScale(0.85f)
                                             .imageEngine(new GlideEngine())
                                             .forResult(REQUEST_CODE_CHOOSE);
@@ -106,13 +108,15 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                             .theme(R.style.Matisse_Qunhe)
                                             .countable(true)
                                             .maxSelectable(9)
+                                            .spanCount(4)
                                             .imageEngine(new GlideEngine())
                                             .forResult(REQUEST_CODE_CHOOSE);
                                     break;
                             }
                             mAdapter.setData(null, null);
                         } else {
-                            Toast.makeText(SampleActivity.this, R.string.permission_request_denied, Toast.LENGTH_LONG)
+                            Toast.makeText(SampleActivity.this, R.string
+                                    .permission_request_denied, Toast.LENGTH_LONG)
                                     .show();
                         }
                     }
@@ -138,7 +142,6 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private static class UriAdapter extends RecyclerView.Adapter<UriAdapter.UriViewHolder> {
-
         private List<Uri> mUris;
         private List<String> mPaths;
 
@@ -151,7 +154,8 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         @Override
         public UriViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             return new UriViewHolder(
-                    LayoutInflater.from(parent.getContext()).inflate(R.layout.uri_item, parent, false));
+                    LayoutInflater.from(parent.getContext()).inflate(R.layout.uri_item, parent,
+                            false));
         }
 
         @Override
@@ -169,7 +173,6 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         static class UriViewHolder extends RecyclerView.ViewHolder {
-
             private TextView mUri;
             private TextView mPath;
 
@@ -180,5 +183,4 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
     }
-
 }

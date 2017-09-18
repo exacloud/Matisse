@@ -28,6 +28,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,6 +92,11 @@ public class MatisseActivity extends AppCompatActivity implements
         setTheme(mSpec.themeId);
         super.onCreate(savedInstanceState);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+
         setContentView(R.layout.activity_matisse);
 
         if (mSpec.needOrientationRestriction()) {
@@ -108,7 +114,7 @@ public class MatisseActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(false);
         setTitle(R.string.matisse_title);
 
 //      mButtonPreview = (TextView) findViewById(R.id.button_preview);
@@ -144,8 +150,14 @@ public class MatisseActivity extends AppCompatActivity implements
     }
 
     @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_matisse, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
+        if (item.getItemId() == android.R.id.home || item.getItemId() == R.id.action_cancel) {
             onBackPressed();
             return true;
         }
@@ -155,7 +167,8 @@ public class MatisseActivity extends AppCompatActivity implements
     @Override
     public void onBackPressed() {
         setResult(Activity.RESULT_CANCELED);
-        super.onBackPressed();
+        finish();
+        overridePendingTransition(R.anim.in_alpha, R.anim.out_alpha);
     }
 
     @Override
