@@ -21,8 +21,8 @@
         android:layout_height="match_parent" />
     <com.zhihu.matisse.internal.ui.widget.CheckView
         android:id="@+id/check_view"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_gravity="top|end"
         app:checkTextSize="14sp"
         app:circleRadius="12dp" />

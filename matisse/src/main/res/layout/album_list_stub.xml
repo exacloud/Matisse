@@ -10,9 +10,10 @@
     <ListView
         android:id="@+id/album_list"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="56dp"
         android:divider="@color/divider"
         android:dividerHeight="@dimen/divider"
-        android:visibility="gone" />
+        android:visibility="visible" />
 </RelativeLayout>

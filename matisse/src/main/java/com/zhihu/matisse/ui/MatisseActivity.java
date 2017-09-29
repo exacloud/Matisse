@@ -168,7 +168,7 @@ public class MatisseActivity extends AppCompatActivity implements
     public void onBackPressed() {
         setResult(Activity.RESULT_CANCELED);
         finish();
-        overridePendingTransition(R.anim.in_alpha, R.anim.out_alpha);
+        overridePendingTransition(R.anim.matisse_in_alpha, R.anim.matisse_out_alpha);
     }
 
     @Override

@@ -284,6 +284,6 @@ public final class SelectionCreator {
             activity.startActivityForResult(intent, requestCode);
         }
 
-        activity.overridePendingTransition(R.anim.in_alpha, R.anim.out_alpha);
+        activity.overridePendingTransition(R.anim.matisse_in_alpha, R.anim.matisse_out_alpha);
     }
 }
